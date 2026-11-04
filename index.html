@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weltrade Affiliate Performance Competition</title>
+<style>
+:root{
+  --bg:#0a0e15; --card:#0f1620; --card2:#121b27; --line:#1b2636; --text:#f2f5f9; --muted:#8e9bb0; --soft:#b9c4d4;
+  --orange:#ee7a3e; --blue:#5b9cf5; --green:#5fd08b; --yellow:#e7c35c; --red:#ff6b7a;
+  --c-net:#ee7a3e; --c-ftd:#5fd08b; --c-active:#5b9cf5; --c-spread:#e7c35c;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
+body{min-height:100vh}
+.top{display:flex;align-items:center;gap:14px;padding:12px 28px;border-bottom:1px solid var(--line);background:#0b1017}
+.logo{font-weight:800;letter-spacing:-.5px;font-size:18px}.logo span{color:var(--orange)}
+.top small{color:var(--muted);font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-family:var(--mono)}
+.wrap{max-width:1240px;margin:0 auto;padding:36px 28px 64px}
+
+/* hero */
+.hero{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);font-weight:600}
+h1{margin:10px 0 0;font-size:clamp(46px,9vw,88px);line-height:.95;letter-spacing:-.05em;font-weight:800}
+h1 em{font-style:normal;color:var(--orange)}
+.lead{color:#9aa7ba;font-size:17px;line-height:1.65;max-width:660px;margin:22px 0 0}
+.crumbs{margin-top:20px;font-size:15px;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.crumbs b{color:var(--blue);font-weight:700}
+.crumbs .ar{color:var(--muted)}
+.badge{width:176px;height:176px;border-radius:50%;border:2px solid rgba(238,122,62,.7);background:radial-gradient(circle at 50% 40%,#1a2230,#0e141d 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;flex:0 0 auto;margin-top:6px}
+.badge .bn{font-size:52px;font-weight:800;color:var(--orange);line-height:1;letter-spacing:-.04em}
+.badge .bl{margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#aab6c8;text-align:center;line-height:1.7}
+
+/* banner */
+.banner{margin-top:34px;background:var(--card);border-left:4px solid var(--orange);border-radius:3px;padding:15px 20px;font-family:var(--mono);font-size:13.5px;line-height:1.7;color:#aebbd0;letter-spacing:.01em}
+
+/* countdown */
+.cdcard{margin-top:30px;border:1px solid var(--line);border-radius:26px;padding:28px 30px 30px;background:linear-gradient(160deg,#131c28,#0f1620)}
+.cdrow{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cdl .lab{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);font-weight:600}
+.cdl h2{margin:12px 0 0;font-size:clamp(22px,3.4vw,32px);letter-spacing:-.03em}
+.cdl p{margin:10px 0 0;color:var(--muted);font-size:15px;line-height:1.55}
+.boxes{display:flex;gap:12px}
+.box{width:98px;height:104px;background:#0a0f16;border:1px solid var(--line);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.box .n{font-size:40px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.box .u{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--muted)}
+.box.s .n{color:var(--orange)}
+.track{margin-top:28px;height:7px;background:#16202d;border-radius:7px;overflow:hidden}
+.track i{display:block;height:100%;background:linear-gradient(90deg,var(--orange),#ffa070);border-radius:7px;transition:width .6s}
+.cdcard.live{border-color:rgba(95,208,139,.5)}
+.cdcard.live .lab{color:var(--green)}
+
+/* two cards */
+.two{display:grid;grid-template-columns:1.05fr 1fr;gap:24px;margin-top:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:30px}
+.card h3{margin:0;font-size:24px;letter-spacing:-.03em}
+.card .sub{margin:10px 0 0;color:var(--muted);font-size:15.5px;line-height:1.55}
+.kl{margin-top:26px;display:flex;flex-direction:column;gap:22px}
+.ki{display:flex;align-items:center;gap:14px}
+.sq{width:13px;height:13px;border-radius:3px;background:var(--kc);flex:0 0 auto;align-self:flex-start;margin-top:7px}
+.ki .t{flex:1}
+.ki .t b{display:block;font-size:18px;letter-spacing:-.01em}
+.ki .t span{display:block;color:var(--muted);font-size:14.5px;margin-top:3px}
+.ki .w{font-size:28px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.sbar{display:flex;height:13px;border-radius:7px;overflow:hidden;margin-top:26px}
+.sbar i{display:block;height:100%}
+.code{margin-top:18px;background:#0a0f16;border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-family:var(--mono);font-size:14px;line-height:1.75;color:#e6ecf5}
+.code .hl{color:var(--orange)}
+.cl{margin:24px 0 0;padding:0 0 0 24px;color:#bcc7d7;font-size:15.5px;line-height:1.65}
+.cl li{margin:0 0 11px;padding-left:4px}
+.cl li b{color:var(--text)}
+
+/* standings */
+.sthead{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:44px}
+.sthead h2{margin:0;font-size:30px;letter-spacing:-.04em}
+.ctrls{display:flex;gap:12px;flex-wrap:wrap}
+.ctrls input,.ctrls select{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:15px;font-family:inherit;min-width:0}
+.ctrls input{width:230px}
+.ctrls input::placeholder{color:#66748a}
+.tcard{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:left;padding:20px 16px;border-bottom:1px solid var(--line);font-weight:600;white-space:nowrap}
+th i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:8px;background:var(--kc)}
+td{padding:15px 16px;border-bottom:1px solid var(--line);font-size:14px;vertical-align:middle}
+tr:last-child>td{border-bottom:none}
+tr.row{cursor:pointer}
+tr.row:hover td{background:rgba(255,255,255,.02)}
+td.r{font-family:var(--mono);color:var(--orange);font-weight:800;font-size:15px}
+.id{font-weight:700;font-size:15px}
+.sm{font-size:11.5px;color:var(--muted);margin-top:3px}
+.pv{font-weight:800;font-size:16px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.mini{height:5px;background:#18222f;border-radius:3px;margin-top:8px;overflow:hidden;width:92px}
+.mini i{display:block;height:100%;background:var(--kc);border-radius:3px}
+.score{font-size:22px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.score small{font-size:11px;color:var(--muted);font-weight:600;margin-left:4px;letter-spacing:0}
+.scorebar{height:5px;background:#18222f;border-radius:4px;margin-top:8px;overflow:hidden;width:108px}
+.scorebar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#9af0c0)}
+tr.sel td{background:rgba(95,208,139,.045)}
+tr.cut td{border-bottom:2px dashed var(--orange)}
+.tag{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(95,208,139,.4);border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:2px}
+.up{color:var(--green)}.dn{color:var(--red)}
+.empty{padding:62px 20px 70px;text-align:center}
+.empty h4{margin:0;font-size:24px;letter-spacing:-.03em}
+.empty p{margin:14px auto 0;color:var(--muted);font-size:16px;line-height:1.65;max-width:560px}
+.hint{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6}
+
+/* breakdown */
+tr.detail td{background:#0b111a;padding:18px 16px}
+.bd{display:grid;grid-template-columns:repeat(4,1fr) 1.15fr;gap:12px}
+.bk{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--kc);border-radius:14px;padding:14px}
+.bk .n{font-size:12px;color:var(--muted)}
+.bk .p{font-size:26px;font-weight:800;margin-top:4px;letter-spacing:-.03em;color:var(--kc)}
+.bk .bar{height:6px;background:#18222f;border-radius:4px;margin:10px 0;overflow:hidden}
+.bk .bar i{display:block;height:100%;background:var(--kc)}
+.bk .calc{font-size:12px;color:var(--muted);line-height:1.6;font-family:var(--mono)}
+.bk .calc b{color:var(--text)}
+.bt{background:linear-gradient(160deg,#122019,#0f1620);border:1px solid rgba(95,208,139,.35);border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:center}
+.bt .n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:700}
+.bt .p{font-size:36px;font-weight:800;color:var(--green);letter-spacing:-.04em;margin-top:4px}
+.bt .p small{font-size:13px;color:var(--muted);font-weight:600}
+.bt .calc{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.55;font-family:var(--mono)}
+
+.foot{margin-top:46px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#5f6d82;text-align:center}
+
+@media(max-width:960px){
+  .two{grid-template-columns:1fr}
+  .badge{width:132px;height:132px}.badge .bn{font-size:40px}
+  .box{width:72px;height:84px;border-radius:14px}.box .n{font-size:28px}.box .u{font-size:9px;margin-top:8px}
+  .bd{grid-template-columns:repeat(2,1fr)}.bt{grid-column:1/-1}
+  .wrap{padding:26px 16px 50px}
+  .card,.cdcard{padding:22px 20px;border-radius:20px}
+  .ctrls{width:100%}.ctrls input{flex:1;width:auto}
+  table.stack thead{display:none}
+  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%}
+  table.stack tr.row{padding:14px 16px;border-bottom:1px solid var(--line)}
+  table.stack tr.cut{border-bottom:2px dashed var(--orange)}
+  table.stack tr.row td{border:none;padding:6px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;background:none!important}
+  table.stack tr.row td::before{content:attr(data-l);font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);flex:0 0 auto}
+  table.stack td .cv{text-align:right}
+  .mini,.scorebar{margin-left:auto}
+}
+@media(max-width:520px){.bd{grid-template-columns:1fr}.boxes{gap:8px;width:100%;justify-content:space-between}.box{flex:1;width:auto}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="logo">weltrade<span>.</span></div>
+  <small>Partner Network</small>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <div class="kicker">Africa · Affiliate performance competition</div>
+      <h1>Your clients.<br><em>Measured daily.</em></h1>
+      <p class="lead">Open to every Weltrade affiliate. One view of every affiliate and the clients behind them. Every eligible client counts toward the affiliate who referred them. Four KPIs combine into one score out of 100.</p>
+      <div class="crumbs"><b>Affiliate</b><span class="ar">←</span><b>Clients</b><span>/ Client performance rolls up to the affiliate</span></div>
+    </div>
+    <div class="badge"><div class="bn" id="bn">3</div><div class="bl">Affiliates<br>selected</div></div>
+  </div>
+
+  <div class="banner" id="banner"></div>
+  <section class="cdcard" id="cd"></section>
+
+  <div class="two">
+    <section class="card" id="how"></section>
+    <section class="card" id="cond"></section>
+  </div>
+
+  <div class="sthead">
+    <h2>Network standings</h2>
+    <div class="ctrls">
+      <input id="q" placeholder="Search affiliate ID">
+      <select id="sort">
+        <option value="score">Sort: tournament score</option>
+        <option value="net">Sort: net deposit</option>
+        <option value="ftd">Sort: FTDs</option>
+        <option value="active">Sort: active clients</option>
+        <option value="spread">Sort: SpreadPay</option>
+      </select>
+    </div>
+  </div>
+  <div class="tcard" id="tbl"></div>
+  <div class="hint" id="hint"></div>
+
+  <div class="foot">WELTRADE AFRICA · AFFILIATE PERFORMANCE COMPETITION · STANDINGS REFRESH DAILY</div>
+</div>
+
+<!-- partners-data.js is produced by the admin page. It holds percentages only, never targets. -->
+<!-- Built-in sample data so the page works on its own. -->
+<script>
+/* Generated by admin.html. SAMPLE DATA. Percentages only. No actual figures. */
+window.LEADERBOARD = {
+ "updateDate": "2026-11-03",
+ "startDate": "2026-11-15T00:00:00+02:00",
+ "endDate": "2026-12-31T23:59:59+02:00",
+ "topN": 3,
+ "demo": true,
+ "showFigures": false,
+ "weights": {
+  "net": 0.15,
+  "ftd": 0.25,
+  "active": 0.35,
+  "spread": 0.25
+ },
+ "affiliates": [
+  {
+   "id": "AF-3024",
+   "country": "Uganda",
+   "net": 82.351,
+   "ftd": 100,
+   "active": 100,
+   "spread": 58.248,
+   "prev": 1
+  },
+  {
+   "id": "AF-3017",
+   "country": "Kenya",
+   "net": 100,
+   "ftd": 81.132,
+   "active": 59.394,
+   "spread": 97.565,
+   "prev": 1
+  },
+  {
+   "id": "AF-3022",
+   "country": "Kenya",
+   "net": 96.313,
+   "ftd": 56.604,
+   "active": 64.242,
+   "spread": 100,
+   "prev": 4
+  },
+  {
+   "id": "AF-3020",
+   "country": "Rwanda",
+   "net": 52.472,
+   "ftd": 73.585,
+   "active": 68.485,
+   "spread": 72.112,
+   "prev": 3
+  },
+  {
+   "id": "AF-3006",
+   "country": "Botswana",
+   "net": 59.213,
+   "ftd": 86.792,
+   "active": 44.242,
+   "spread": 84.287,
+   "prev": 7
+  },
+  {
+   "id": "AF-3033",
+   "country": "Tanzania",
+   "net": 55.923,
+   "ftd": 88.679,
+   "active": 51.515,
+   "spread": 68.073,
+   "prev": 7
+  },
+  {
+   "id": "AF-3030",
+   "country": "Rwanda",
+   "net": 0,
+   "ftd": 84.906,
+   "active": 72.727,
+   "spread": 75.649,
+   "prev": 9
+  },
+  {
+   "id": "AF-3003",
+   "country": "Tanzania",
+   "net": 77.6,
+   "ftd": 71.698,
+   "active": 55.152,
+   "spread": 60.724,
+   "prev": 7
+  },
+  {
+   "id": "AF-3026",
+   "country": "Botswana",
+   "net": 54.208,
+   "ftd": 41.509,
+   "active": 55.758,
+   "spread": 43.21,
+   "prev": null
+  },
+  {
+   "id": "AF-3001",
+   "country": "Botswana",
+   "net": 40.913,
+   "ftd": 71.698,
+   "active": 39.394,
+   "spread": 40.657,
+   "prev": 11
+  },
+  {
+   "id": "AF-3016",
+   "country": "Botswana",
+   "net": 62.037,
+   "ftd": 62.264,
+   "active": 44.242,
+   "spread": 30.243,
+   "prev": 14
+  },
+  {
+   "id": "AF-3039",
+   "country": "Uganda",
+   "net": 56.801,
+   "ftd": 58.491,
+   "active": 23.03,
+   "spread": 59.359,
+   "prev": 10
+  },
+  {
+   "id": "AF-3012",
+   "country": "Kenya",
+   "net": 43.197,
+   "ftd": 45.283,
+   "active": 30.303,
+   "spread": 50.37,
+   "prev": 16
+  },
+  {
+   "id": "AF-3027",
+   "country": "Kenya",
+   "net": 50.48,
+   "ftd": 56.604,
+   "active": 21.212,
+   "spread": 36.676,
+   "prev": 15
+  },
+  {
+   "id": "AF-3009",
+   "country": "Uganda",
+   "net": 31.477,
+   "ftd": 39.623,
+   "active": 32.121,
+   "spread": 45.293,
+   "prev": 17
+  },
+  {
+   "id": "AF-3002",
+   "country": "Kenya",
+   "net": 0,
+   "ftd": 22.642,
+   "active": 49.091,
+   "spread": 47.199,
+   "prev": 15
+  },
+  {
+   "id": "AF-3035",
+   "country": "Rwanda",
+   "net": 25.483,
+   "ftd": 35.849,
+   "active": 26.061,
+   "spread": 46.032,
+   "prev": 19
+  },
+  {
+   "id": "AF-3010",
+   "country": "Rwanda",
+   "net": 19.173,
+   "ftd": 33.962,
+   "active": 30.303,
+   "spread": 35.82,
+   "prev": 16
+  },
+  {
+   "id": "AF-3023",
+   "country": "Tanzania",
+   "net": 24.799,
+   "ftd": 35.849,
+   "active": 30.303,
+   "spread": 26.592,
+   "prev": 19
+  },
+  {
+   "id": "AF-3034",
+   "country": "Uganda",
+   "net": 19.149,
+   "ftd": 32.075,
+   "active": 27.273,
+   "spread": 34.192,
+   "prev": 23
+  },
+  {
+   "id": "AF-3037",
+   "country": "Kenya",
+   "net": 31.823,
+   "ftd": 32.075,
+   "active": 30.909,
+   "spread": 15.418,
+   "prev": 22
+  },
+  {
+   "id": "AF-3021",
+   "country": "Botswana",
+   "net": 26.443,
+   "ftd": 18.868,
+   "active": 32.727,
+   "spread": 17.696,
+   "prev": 19
+  },
+  {
+   "id": "AF-3014",
+   "country": "Uganda",
+   "net": 20.345,
+   "ftd": 32.075,
+   "active": 26.061,
+   "spread": 14.51,
+   "prev": 23
+  },
+  {
+   "id": "AF-3013",
+   "country": "Tanzania",
+   "net": 26.784,
+   "ftd": 30.189,
+   "active": 20,
+   "spread": 13.888,
+   "prev": 24
+  },
+  {
+   "id": "AF-3025",
+   "country": "Rwanda",
+   "net": 24.287,
+   "ftd": 15.094,
+   "active": 16.97,
+   "spread": 19.105,
+   "prev": null
+  },
+  {
+   "id": "AF-3029",
+   "country": "Uganda",
+   "net": 0,
+   "ftd": 18.868,
+   "active": 18.788,
+   "spread": 26.992,
+   "prev": 25
+  },
+  {
+   "id": "AF-3032",
+   "country": "Kenya",
+   "net": 14.194,
+   "ftd": 16.981,
+   "active": 15.758,
+   "spread": 16.339,
+   "prev": 28
+  },
+  {
+   "id": "AF-3008",
+   "country": "Tanzania",
+   "net": 19.646,
+   "ftd": 15.094,
+   "active": 19.394,
+   "spread": 9.72,
+   "prev": 28
+  },
+  {
+   "id": "AF-3036",
+   "country": "Botswana",
+   "net": 15.916,
+   "ftd": 16.981,
+   "active": 15.758,
+   "spread": 14.445,
+   "prev": 28
+  },
+  {
+   "id": "AF-3011",
+   "country": "Botswana",
+   "net": 0,
+   "ftd": 16.981,
+   "active": 18.788,
+   "spread": 18.491,
+   "prev": 29
+  },
+  {
+   "id": "AF-3007",
+   "country": "Kenya",
+   "net": 8.209,
+   "ftd": 18.868,
+   "active": 7.879,
+   "spread": 17.639,
+   "prev": 30
+  },
+  {
+   "id": "AF-3031",
+   "country": "Botswana",
+   "net": 10.934,
+   "ftd": 11.321,
+   "active": 10.909,
+   "spread": 15.438,
+   "prev": 33
+  },
+  {
+   "id": "AF-3019",
+   "country": "Uganda",
+   "net": 6.844,
+   "ftd": 13.208,
+   "active": 10.909,
+   "spread": 12.793,
+   "prev": 35
+  },
+  {
+   "id": "AF-3005",
+   "country": "Rwanda",
+   "net": 9.296,
+   "ftd": 13.208,
+   "active": 12.121,
+   "spread": 8.585,
+   "prev": 36
+  },
+  {
+   "id": "AF-3015",
+   "country": "Rwanda",
+   "net": 12.955,
+   "ftd": 13.208,
+   "active": 8.485,
+   "spread": 11.218,
+   "prev": 36
+  },
+  {
+   "id": "AF-3028",
+   "country": "Tanzania",
+   "net": 16.826,
+   "ftd": 9.434,
+   "active": 7.879,
+   "spread": 11.521,
+   "prev": 36
+  },
+  {
+   "id": "AF-3018",
+   "country": "Tanzania",
+   "net": 11.549,
+   "ftd": 9.434,
+   "active": 9.697,
+   "spread": 11.764,
+   "prev": 40
+  },
+  {
+   "id": "AF-3004",
+   "country": "Uganda",
+   "net": 11.874,
+   "ftd": 9.434,
+   "active": 9.697,
+   "spread": 11.424,
+   "prev": 39
+  },
+  {
+   "id": "AF-3038",
+   "country": "Tanzania",
+   "net": 9.016,
+   "ftd": 9.434,
+   "active": 7.879,
+   "spread": 8.581,
+   "prev": 40
+  },
+  {
+   "id": "AF-3040",
+   "country": "Rwanda",
+   "net": 7.952,
+   "ftd": 11.321,
+   "active": 7.879,
+   "spread": 7.281,
+   "prev": 39
+  }
+ ]
+};
+</script>
+<!-- Optional: a partners-data.js uploaded next to this file replaces the sample data above. -->
+<script src="partners-data.js"></script>
+<script>
+/* =====================================================
+   SETUP
+   ===================================================== */
+const D=window.LEADERBOARD||{affiliates:[]};
+const KPI0=[ // display order: net, ftd, active, spread
+  {key:'net',   label:'Net deposit',   desc:'Deposits minus withdrawals, USD',     unit:'usd',weight:0.15,color:'var(--c-net)'},
+  {key:'ftd',   label:'FTDs',          desc:'First-time deposits in the window',   unit:'n',  weight:0.25,color:'var(--c-ftd)'},
+  {key:'active',label:'Active clients',desc:'Clients who traded in the window',    unit:'n',  weight:0.35,color:'var(--c-active)'},
+  {key:'spread',label:'SpreadPay',     desc:'Spread-based payout, USD',            unit:'usd',weight:0.25,color:'var(--c-spread)'}
+];
+const KPIS=KPI0.map(k=>Object.assign({},k,{weight:(D.weights&&typeof D.weights[k.key]==='number')?D.weights[k.key]:k.weight}));
+const TOPN=D.topN||3;
+const START=new Date(D.startDate||D.launchDate||'2026-11-15T00:00:00+02:00');
+const END=new Date(D.endDate||'2026-12-31T23:59:59+02:00');
+const TZ='Africa/Kigali';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fm=(d,o)=>new Intl.DateTimeFormat('en-GB',Object.assign({timeZone:TZ},o)).format(d);
+const dLong =d=>fm(d,{day:'numeric',month:'long',year:'numeric'});
+const dShort=d=>fm(d,{day:'numeric',month:'short',year:'numeric'});
+const dDay  =d=>fm(d,{day:'numeric',month:'long'});
+const hm    =d=>fm(d,{hour:'2-digit',minute:'2-digit',hourCycle:'h23'});
+const iso   =d=>new Intl.DateTimeFormat('sv-SE',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit'}).format(d);
+const FIRST=new Date(START.getTime()+86400000);
+const W=k=>Math.round(k.weight*100);
+const RAW=D.showFigures===true&&(D.affiliates||[]).some(a=>a.raw);
+const state={q:'',sort:'score',open:{}};
+
+/* =====================================================
+   SCORING  (each KPI is already a % of the best affiliate, calculated by the admin page)
+   ===================================================== */
+function build(){
+  const rows=(D.affiliates||[]).map(a=>{
+    const ratio={},pts={}; let s=0;
+    KPIS.forEach(k=>{
+      let p=Number(a[k.key])||0; if(p<0)p=0; if(p>100)p=100;
+      ratio[k.key]=p; pts[k.key]=p*k.weight; s+=pts[k.key];
+    });
+    return {a,ratio,pts,score:s};
+  });
+  const c=(x,y)=>Math.abs(x-y)<1e-9?0:y-x;
+  // closest to 100 first. Ties: more FTDs, then higher net deposit, then active, SpreadPay, ID
+  rows.sort((x,y)=>c(x.score,y.score)||c(x.ratio.ftd,y.ratio.ftd)||c(x.ratio.net,y.ratio.net)||c(x.ratio.active,y.ratio.active)||c(x.ratio.spread,y.ratio.spread)||String(x.a.id).localeCompare(String(y.a.id)));
+  rows.forEach((r,i)=>r.rank=i+1);
+  return rows;
+}
+const ALL=build();
+const phase=()=>{const n=new Date();return n<START?'pre':n<END?'live':'ended'};
+const showTable=()=>ALL.length>0&&(D.demo||new Date()>=START);
+
+/* =====================================================
+   STATIC BLOCKS
+   ===================================================== */
+function renderTop(){
+  $('#bn').textContent=TOPN;
+  const w=KPIS.slice().sort((a,b)=>b.weight-a.weight).map(k=>(k.key==='net'?'Net deposit':k.key==='ftd'?'FTD':k.key==='active'?'Active':'SpreadPay')+' '+W(k)).join(' · ');
+  $('#banner').textContent=(D.demo?'Sample data':'Official standings')+' · '+iso(START)+' → '+iso(END)+' · Weights: '+w+' · First standings published '+dShort(FIRST);
+  $('#hint').innerHTML=D.updateDate?'Last updated: '+esc(D.updateDate)+'. Tap any row to see how that score was calculated. The dashed line marks the cut after the top '+TOPN+'.':'';
+  if(!showTable())$('#hint').innerHTML='';
+
+  const ex=KPIS.find(k=>k.key==='ftd');
+  $('#how').innerHTML='<h3>How your score is calculated</h3><p class="sub">Four KPIs, each weighted. Maximum score is 100.</p>'+
+    '<div class="kl">'+KPIS.map(k=>'<div class="ki" style="--kc:'+k.color+'"><span class="sq"></span><div class="t"><b>'+k.label+'</b><span>'+k.desc+'</span></div><div class="w">'+W(k)+'%</div></div>').join('')+'</div>'+
+    '<div class="sbar">'+KPIS.map(k=>'<i style="width:'+W(k)+'%;background:'+k.color+'"></i>').join('')+'</div>'+
+    '<div class="code">KPI points = <span class="hl">(your result ÷ best result among all affiliates)</span> × KPI weight<br>Score = Net deposit pts + FTD pts + Active client pts + SpreadPay pts<br><br>Example: 30 FTDs when the leader has 40 FTDs → 30 ÷ 40 × '+W(ex)+' = <span class="hl">'+(30/40*W(ex)).toFixed(2)+' pts</span> for the FTD KPI.</div>';
+
+  const win=dShort(START)+' '+hm(START)+' to '+dShort(END)+' '+hm(END);
+  $('#cond').innerHTML='<h3>Competition conditions</h3><p class="sub">Open to all Weltrade affiliates and applied the same way to everyone.</p><ol class="cl">'+[
+    '<b>Who can take part.</b> The competition is open to every Weltrade affiliate.',
+    '<b>Scoring window.</b> Only activity from '+win+' (UTC+2) counts.',
+    '<b>Client attribution.</b> An affiliate’s totals are the sum of the clients they referred. Each client counts once.',
+    '<b>Net deposit</b> = deposits minus withdrawals of your clients in the window, in USD. A negative total scores 0 points.',
+    '<b>FTD</b> = a client’s first-ever deposit, made inside the window.',
+    '<b>Active client</b> = a client who placed at least one trade in the window.',
+    '<b>SpreadPay</b> = spread-based payout generated by your clients’ trading in the window, in USD.',
+    '<b>Relative scoring.</b> The leader in each KPI earns its full weight. Everyone else earns a share in proportion to the leader.',
+    '<b>Selection.</b> At close, the <b>top '+TOPN+' scores closest to 100</b> are selected. Ties go to more FTDs, then higher net deposit.',
+    '<b>Daily updates.</b> Standings refresh once a day. Final results are confirmed after data validation.'
+  ].map(t=>'<li>'+t+'</li>').join('')+'</ol>';
+}
+
+/* =====================================================
+   COUNTDOWN
+   ===================================================== */
+function tick(){
+  const el=$('#cd'), ph=phase(), n=new Date();
+  const target=ph==='pre'?START:END;
+  let diff=Math.max(0,target-n);
+  const s=Math.floor(diff/1000), d=Math.floor(s/86400), h=Math.floor(s%86400/3600), m=Math.floor(s%3600/60), x=s%60, p=v=>String(v).padStart(2,'0');
+  const win='Scoring window: '+dShort(START)+' '+hm(START)+' to '+dShort(END)+' '+hm(END)+', Kigali time (UTC+2).';
+  let lab,title,sub,pct;
+  if(ph==='pre'){lab='Launch countdown';title='Competition opens '+dLong(START);sub=win;pct=0}
+  else if(ph==='live'){lab='Competition live';title='Competition closes '+dLong(END);sub=win;pct=Math.min(100,(n-START)/(END-START)*100)}
+  else{lab='Competition closed';title='Final results are being confirmed';sub=win;pct=100}
+  el.className='cdcard'+(ph==='live'?' live':'');
+  el.innerHTML='<div class="cdrow"><div class="cdl"><div class="lab">'+lab+'</div><h2>'+title+'</h2><p>'+sub+'</p></div>'+
+    '<div class="boxes">'+[[d,'DAYS'],[p(h),'HOURS'],[p(m),'MIN'],[p(x),'SEC']].map((b,i)=>'<div class="box'+(i===3?' s':'')+'"><div class="n">'+b[0]+'</div><div class="u">'+b[1]+'</div></div>').join('')+'</div></div>'+
+    '<div class="track"><i style="width:'+pct+'%"></i></div>';
+}
+setInterval(tick,1000); tick();
+
+/* =====================================================
+   STANDINGS
+   ===================================================== */
+const money=v=>(v<0?'-':'')+'$'+Math.abs(Math.round(v)).toLocaleString('en-US');
+const whole=v=>Math.round(v).toLocaleString('en-US');
+function movement(r){
+  const p=r.a.prev;
+  if(p==null)return '';
+  if(p>r.rank)return ' · <span class="up">▲ '+(p-r.rank)+'</span>';
+  if(p<r.rank)return ' · <span class="dn">▼ '+(r.rank-p)+'</span>';
+  return ' · —';
+}
+function cell(r,k){
+  const ratio=r.ratio[k.key], raw=r.a.raw&&r.a.raw[k.key];
+  const prim=(RAW&&raw!=null)?(k.unit==='usd'?money(raw):whole(raw)):ratio.toFixed(1)+'%';
+  const sec=(RAW&&raw!=null)?'<div class="sm">'+ratio.toFixed(1)+'% of leader</div>':'';
+  return '<td data-l="'+k.label+'" style="--kc:'+k.color+'"><div class="cv"><div class="pv">'+prim+'</div>'+sec+'<div class="mini"><i style="width:'+ratio+'%"></i></div></div></td>';
+}
+function breakdown(r){
+  return '<tr class="detail"><td colspan="7"><div class="bd">'+KPIS.map(k=>
+    '<div class="bk" style="--kc:'+k.color+'"><div class="n">'+k.label+' · weight '+W(k)+'</div><div class="p">'+r.ratio[k.key].toFixed(1)+'%</div><div class="bar"><i style="width:'+r.ratio[k.key]+'%"></i></div>'+
+    '<div class="calc">'+r.ratio[k.key].toFixed(1)+'% × '+W(k)+' = <b>'+r.pts[k.key].toFixed(2)+' pts</b></div></div>').join('')+
+    '<div class="bt"><div class="n">Total score</div><div class="p">'+r.score.toFixed(2)+'<small> / 100</small></div><div class="calc">'+KPIS.map(k=>r.pts[k.key].toFixed(2)).join(' + ')+' = '+r.score.toFixed(2)+'</div></div></div></td></tr>';
+}
+function renderTable(){
+  const head='<thead><tr><th>Rank</th><th>Affiliate</th>'+KPIS.map(k=>'<th style="--kc:'+k.color+'"><i></i>'+k.label+' · '+(RAW?(k.unit==='usd'?'USD':'count'):W(k)+'%')+'</th>').join('')+'<th>Score / 100</th></tr></thead>';
+  let body;
+  if(!showTable()){
+    body='<tbody><tr><td colspan="7" class="empty-td" style="padding:0"><div class="empty"><h4>Standings open soon</h4><p>The competition starts on '+dLong(START)+'. The first standings will be published on '+dDay(FIRST)+', and every day after that.</p></div></td></tr></tbody>';
+    $('#tbl').innerHTML='<table class="stack">'+head+body+'</table>';
+    return;
+  }
+  const q=state.q.trim().toLowerCase();
+  let list=ALL.filter(r=>!q||String(r.a.id).toLowerCase().includes(q));
+  if(state.sort!=='score')list=list.slice().sort((x,y)=>y.ratio[state.sort]-x.ratio[state.sort]||x.rank-y.rank);
+  body='<tbody>';
+  if(!list.length)body+='<tr><td colspan="7"><div class="empty"><h4>No affiliate found</h4><p>Check the ID and try again.</p></div></td></tr>';
+  list.forEach(r=>{
+    const sel=r.rank<=TOPN, cut=r.rank===TOPN&&!q&&state.sort==='score';
+    body+='<tr class="row '+(sel?'sel ':'')+(cut?'cut':'')+'" data-id="'+esc(r.a.id)+'">'+
+      '<td class="r" data-l="Rank">'+String(r.rank).padStart(2,'0')+'</td>'+
+      '<td data-l="Affiliate"><div class="cv"><div class="id">'+esc(r.a.id)+(sel?'<span class="tag">Top '+TOPN+'</span>':'')+'</div><div class="sm">'+esc(r.a.country||'')+movement(r)+'</div></div></td>'+
+      KPIS.map(k=>cell(r,k)).join('')+
+      '<td data-l="Score / 100"><div class="cv"><div class="score">'+r.score.toFixed(2)+'<small>/ 100</small></div><div class="scorebar"><i style="width:'+r.score+'%"></i></div></div></td></tr>';
+    if(state.open[r.a.id])body+=breakdown(r);
+  });
+  body+='</tbody>';
+  $('#tbl').innerHTML='<table class="stack">'+head+body+'</table>';
+  document.querySelectorAll('tr.row').forEach(tr=>tr.onclick=()=>{const id=tr.dataset.id;state.open[id]=!state.open[id];renderTable()});
+}
+$('#q').oninput=e=>{state.q=e.target.value;renderTable()};
+$('#sort').onchange=e=>{state.sort=e.target.value;renderTable()};
+renderTop(); renderTable();
+</script>
+</body>
+</html>
