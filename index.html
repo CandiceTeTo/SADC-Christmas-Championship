@@ -628,7 +628,7 @@ const showTable=()=>ALL.length>0&&(D.demo||new Date()>=START);
 function renderTop(){
   $('#bn').textContent=TOPN;
   const w=KPIS.slice().sort((a,b)=>b.weight-a.weight).map(k=>(k.key==='net'?'Net deposit':k.key==='ftd'?'FTD':k.key==='active'?'Active':'SpreadPay')+' '+W(k)).join(' · ');
-  $('#banner').textContent=(D.demo?'Sample data':'Official standings')+' · '+iso(START)+' → '+iso(END)+' · Weights: '+w+' · First standings published '+dShort(FIRST);
+  $('#banner').textContent=(D.demo?'PREVIEW · sample data, not real results':'Official standings')+' · '+iso(START)+' → '+iso(END)+' · Weights: '+w+' · First standings published '+dShort(FIRST);
   $('#hint').innerHTML=D.updateDate?'Last updated: '+esc(D.updateDate)+'. Tap any row to see how that score was calculated. The dashed line marks the cut after the top '+TOPN+'.':'';
   if(!showTable())$('#hint').innerHTML='';
 
