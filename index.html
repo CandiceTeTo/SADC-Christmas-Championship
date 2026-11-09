@@ -6,17 +6,16 @@
 <title>Weltrade SADC Christmas Competition</title>
 <style>
 :root{
-  --bg:#050e0a; --card:#0a1812; --card2:#0e2018; --line:#1c3b2d; --text:#ffffff; --muted:#a3b3ab; --soft:#c9d2ce; --silver:#c9d1cd;
-  --accent:#e0303f; --gold:#f0c75e; --blue:#d5dbd8; --green:#2fb36d; --yellow:#e9cf9c; --red:#ff6b78;
-  --x-net:#f0c75e; --x-ftd:#2fb36d; --x-active:#e0303f; --x-spread:#c9d1cd;
+  --bg:#070b13; --card:#0c1320; --card2:#101a2b; --line:#182540; --text:#f2f5fa; --muted:#8a98b2; --soft:#b9c4d6;
+  --accent:#e63946; --orange:#ee7a3e; --gold:#f4c95d; --blue:#7fb0f0; --green:#46c58b; --yellow:#e9cf9c; --red:#ff7b88;
   --c-net:#c4b3e6; --c-ftd:#a9dcc2; --c-active:#9fc6ea; --c-spread:#ecd3a6;
   --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
 body{min-height:100vh}
-.top{border-top:3px solid;border-image:linear-gradient(90deg,#e0303f 0 33%,#f0c75e 33% 50%,#2fb36d 50% 83%,#c9d1cd 83%) 1;display:flex;align-items:center;gap:14px;padding:12px 28px;border-bottom:1px solid var(--line);background:#030a07}
-.logo{font-weight:800;letter-spacing:-.5px;font-size:18px}.logo span{color:var(--accent)}
+.top{display:flex;align-items:center;gap:14px;padding:12px 28px;border-bottom:1px solid var(--line);background:#050912}
+.logo{font-weight:800;letter-spacing:-.5px;font-size:18px}.logo span{color:var(--orange)}
 .top small{color:var(--muted);font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-family:var(--mono)}
 .wrap{max-width:1240px;margin:0 auto;padding:36px 28px 64px}
 
@@ -24,9 +23,9 @@ body{min-height:100vh}
 .hero{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
 .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
 h1{margin:10px 0 0;font-size:clamp(40px,7.4vw,78px);line-height:1;letter-spacing:-.045em;font-weight:800}
-h1 em{font-style:normal;color:var(--accent)}
+h1{color:var(--orange)}h1 em{font-style:normal;color:var(--orange)}
 .xmas{font-size:21px;font-weight:700;line-height:1.4;max-width:660px;margin:24px 0 0;letter-spacing:-.01em}
-.lead{color:#b7c4bc;font-size:16.5px;line-height:1.7;max-width:680px;margin:12px 0 0}
+.lead{color:#9aa8bf;font-size:16.5px;line-height:1.7;max-width:680px;margin:12px 0 0}
 .tagline{margin-top:20px;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;line-height:1.8}
 .flags{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
 .flag{display:block;width:34px;height:23px;border-radius:5px;overflow:hidden;border:1px solid rgba(255,255,255,.16);box-shadow:0 2px 8px rgba(0,0,0,.35)}
@@ -37,22 +36,22 @@ svg.fl{width:21px;height:14px;border-radius:2px;vertical-align:-2px;margin-right
 .crumbs .ar{color:var(--muted)}
 
 /* banner */
-.banner{margin-top:34px;background:var(--card);border-left:4px solid var(--accent);border-radius:3px;padding:15px 20px;font-family:var(--mono);font-size:13.5px;line-height:1.7;color:#c4d0c9;letter-spacing:.01em}
+.banner{margin-top:34px;background:var(--card);border-left:4px solid var(--accent);border-radius:3px;padding:15px 20px;font-family:var(--mono);font-size:13.5px;line-height:1.7;color:#aebbd0;letter-spacing:.01em}
 
 /* countdown */
-.cdcard{margin-top:30px;border:1px solid var(--line);border-radius:26px;padding:28px 30px 30px;background:linear-gradient(160deg,#12291e,#0a1812)}
+.cdcard{margin-top:30px;border:1px solid var(--line);border-radius:26px;padding:28px 30px 30px;background:linear-gradient(160deg,#111d33,#0b1320)}
 .cdrow{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .cdl .lab{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .cdl h2{margin:12px 0 0;font-size:clamp(22px,3.4vw,32px);letter-spacing:-.03em}
 .cdl p{margin:10px 0 0;color:var(--muted);font-size:15px;line-height:1.55}
 .boxes{display:flex;gap:12px}
-.box{width:98px;height:104px;background:#040c08;border:1px solid var(--line);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.box{width:98px;height:104px;background:#070c15;border:1px solid var(--line);border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .box .n{font-size:40px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
 .box .u{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--muted)}
 .box.s .n{color:var(--accent)}
-.track{margin-top:28px;height:7px;background:#1a3427;border-radius:7px;overflow:hidden}
+.track{margin-top:28px;height:7px;background:#14203a;border-radius:7px;overflow:hidden}
 .track i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:7px;transition:width .6s}
-.cdcard.live{border-color:rgba(47,179,109,.5)}
+.cdcard.live{border-color:rgba(116,214,164,.5)}
 .cdcard.live .lab{color:var(--green)}
 
 /* two cards */
@@ -69,9 +68,9 @@ svg.fl{width:21px;height:14px;border-radius:2px;vertical-align:-2px;margin-right
 .ki .w{font-size:28px;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .sbar{display:flex;height:13px;border-radius:7px;overflow:hidden;margin-top:26px}
 .sbar i{display:block;height:100%}
-.code{margin-top:18px;background:#040c08;border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-family:var(--mono);font-size:14px;line-height:1.75;color:#f1f5f3}
+.code{margin-top:18px;background:#070c15;border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-family:var(--mono);font-size:14px;line-height:1.75;color:#e6ecf5}
 .code .hl{color:var(--gold)}
-.cl{margin:24px 0 0;padding:0 0 0 24px;color:#cdd6d1;font-size:15.5px;line-height:1.65}
+.cl{margin:24px 0 0;padding:0 0 0 24px;color:#bcc7d7;font-size:15.5px;line-height:1.65}
 .cl li{margin:0 0 11px;padding-left:4px}
 .cl li b{color:var(--text)}
 
@@ -81,7 +80,7 @@ svg.fl{width:21px;height:14px;border-radius:2px;vertical-align:-2px;margin-right
 .ctrls{display:flex;gap:12px;flex-wrap:wrap}
 .ctrls input,.ctrls select{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:13px 16px;font-size:15px;font-family:inherit;min-width:0}
 .ctrls input{width:230px}
-.ctrls input::placeholder{color:#7e9187}
+.ctrls input::placeholder{color:#66748a}
 .tcard{margin-top:18px;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}
 table{width:100%;border-collapse:collapse}
 th{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:left;padding:20px 16px;border-bottom:1px solid var(--line);font-weight:600;white-space:nowrap}
@@ -89,20 +88,20 @@ th i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:8p
 td{padding:15px 16px;border-bottom:1px solid var(--line);font-size:14px;vertical-align:middle}
 tr:last-child>td{border-bottom:none}
 tr.row{cursor:pointer}
-tr.row:hover td{background:rgba(255,255,255,.03)}
+tr.row:hover td{background:rgba(255,255,255,.02)}
 td.r{font-family:var(--mono);color:var(--gold);font-weight:800;font-size:15px}
 .id{font-weight:700;font-size:15px}
 .sm{font-size:11.5px;color:var(--muted);margin-top:3px}
 .pv{font-weight:800;font-size:16px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.mini{height:5px;background:#1a3427;border-radius:3px;margin-top:8px;overflow:hidden;width:92px}
+.mini{height:5px;background:#14203a;border-radius:3px;margin-top:8px;overflow:hidden;width:92px}
 .mini i{display:block;height:100%;background:var(--kc);border-radius:3px}
 .score{font-size:22px;font-weight:800;color:var(--green);font-variant-numeric:tabular-nums;letter-spacing:-.03em}
 .score small{font-size:11px;color:var(--muted);font-weight:600;margin-left:4px;letter-spacing:0}
-.scorebar{height:5px;background:#1a3427;border-radius:4px;margin-top:8px;overflow:hidden;width:108px}
-.scorebar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#7fe0a8)}
-tr.sel td{background:rgba(47,179,109,.045)}
+.scorebar{height:5px;background:#14203a;border-radius:4px;margin-top:8px;overflow:hidden;width:108px}
+.scorebar i{display:block;height:100%;background:linear-gradient(90deg,var(--green),#9af0c0)}
+tr.sel td{background:rgba(116,214,164,.045)}
 tr.cut td{border-bottom:2px dashed var(--accent)}
-.tag{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(47,179,109,.4);border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:2px}
+.tag{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);border:1px solid rgba(116,214,164,.4);border-radius:999px;padding:2px 8px;margin-left:8px;vertical-align:2px}
 .up{color:var(--green)}.dn{color:var(--red)}
 .empty{padding:62px 20px 70px;text-align:center}
 .empty h4{margin:0;font-size:24px;letter-spacing:-.03em}
@@ -110,22 +109,22 @@ tr.cut td{border-bottom:2px dashed var(--accent)}
 .hint{font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6}
 
 /* breakdown */
-tr.detail td{background:#08130e;padding:18px 16px}
+tr.detail td{background:#0b111a;padding:18px 16px}
 .bd{display:grid;grid-template-columns:repeat(4,1fr) 1.15fr;gap:12px}
 .bk{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--kc);border-radius:14px;padding:14px}
 .bk .n{font-size:12px;color:var(--muted)}
 .bk .p{font-size:26px;font-weight:800;margin-top:4px;letter-spacing:-.03em;color:var(--kc)}
-.bk .bar{height:6px;background:#1a3427;border-radius:4px;margin:10px 0;overflow:hidden}
+.bk .bar{height:6px;background:#14203a;border-radius:4px;margin:10px 0;overflow:hidden}
 .bk .bar i{display:block;height:100%;background:var(--kc)}
 .bk .calc{font-size:12px;color:var(--muted);line-height:1.6;font-family:var(--mono)}
 .bk .calc b{color:var(--text)}
-.bt{background:linear-gradient(160deg,#10281c,#0a1812);border:1px solid rgba(47,179,109,.35);border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:center}
+.bt{background:linear-gradient(160deg,#122019,#0f1620);border:1px solid rgba(116,214,164,.35);border-radius:14px;padding:14px;display:flex;flex-direction:column;justify-content:center}
 .bt .n{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:700}
 .bt .p{font-size:36px;font-weight:800;color:var(--green);letter-spacing:-.04em;margin-top:4px}
 .bt .p small{font-size:13px;color:var(--muted);font-weight:600}
 .bt .calc{font-size:11.5px;color:var(--muted);margin-top:4px;line-height:1.55;font-family:var(--mono)}
 
-.foot{margin-top:46px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#80948a;text-align:center}
+.foot{margin-top:46px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:#5f6d82;text-align:center}
 
 /* score card (landscape) */
 .how{margin-top:30px}
@@ -134,7 +133,7 @@ tr.detail td{background:#08130e;padding:18px 16px}
 .kt .w{font-size:38px;font-weight:800;letter-spacing:-.04em;color:var(--kc);line-height:1;font-variant-numeric:tabular-nums}
 .kt b{display:block;font-size:17px;margin-top:12px;letter-spacing:-.01em}
 .kt .d{display:block;color:var(--muted);font-size:13.5px;margin-top:4px;line-height:1.45}
-.fx{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:#040c08}
+.fx{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:#070c15}
 .fx summary{cursor:pointer;list-style:none;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:700;font-size:15px}
 .fx summary::-webkit-details-marker{display:none}
 .fx summary::after{content:'+';color:var(--gold);font-size:24px;line-height:1;font-weight:400}
@@ -148,7 +147,7 @@ tr.detail td{background:#08130e;padding:18px 16px}
 .condbtn .ct{display:block;font-size:21px;font-weight:700;letter-spacing:-.02em}
 .condbtn .cs{display:block;margin-top:5px;color:var(--muted);font-size:14.5px;font-weight:400;line-height:1.5}
 .condbtn .go{flex:0 0 auto;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(244,201,93,.5);border-radius:999px;padding:10px 18px;white-space:nowrap}
-.modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(2,8,5,.82);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}
+.modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(3,6,12,.8);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:20px}
 .modal.open{display:flex}
 .mbox{width:100%;max-width:700px;max-height:88vh;overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px 30px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
 .mhead{display:flex;justify-content:space-between;align-items:center;gap:12px}
@@ -156,11 +155,6 @@ tr.detail td{background:#08130e;padding:18px 16px}
 .mx{flex:0 0 auto;background:var(--card2);border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;font-family:inherit}
 .mx:hover{border-color:var(--accent)}
 .mbox .sub{margin:10px 0 0;color:var(--muted);font-size:15.5px;line-height:1.55}
-
-/* festive title */
-.kicker{font-size:clamp(15px,2.4vw,21px);letter-spacing:.16em;font-weight:800}
-.kicker .k1{color:#fff}
-h1 .h1a{color:var(--accent)}h1 .h1b{color:var(--green)}h1 .h1c{color:var(--gold)}.kicker .k2{color:var(--gold)}.kicker .k3{color:var(--accent)}.kicker .k4{color:var(--green)}.kicker .kd{color:var(--silver)}
 
 @media(max-width:960px){
   .kgrid{grid-template-columns:repeat(2,1fr)}
@@ -193,8 +187,8 @@ h1 .h1a{color:var(--accent)}h1 .h1b{color:var(--green)}h1 .h1c{color:var(--gold)
 <div class="wrap">
   <div class="hero">
     <div>
-      <div class="kicker"><span class="k1">Africa</span> <span class="kd">·</span> <span class="k2">SADC</span> <span class="k3">Christmas</span> <span class="k4">Competition</span></div>
-      <h1><span class="h1a">Your clients.</span><br><span class="h1b">Your performance.</span><br><span class="h1c">Your rewards.</span></h1>
+      <div class="kicker">Africa · SADC Christmas Competition</div>
+      <h1>Your clients.<br>Your performance.<br><em>Your rewards.</em></h1>
       <p class="xmas">This Christmas, we’re rewarding the affiliates who make a difference.</p>
       <p class="lead">Open to all Weltrade affiliates across the SADC region. Every eligible client counts towards the performance of the affiliate who referred them. Four key performance indicators combine into one transparent score out of 100, with performance tracked daily.</p>
       <div class="tagline">One competition. One leaderboard. A Christmas worth winning.</div>
@@ -248,10 +242,10 @@ h1 .h1a{color:var(--accent)}h1 .h1b{color:var(--green)}h1 .h1c{color:var(--gold)
    ===================================================== */
 const D=window.LEADERBOARD||{affiliates:[]};
 const KPI0=[ // display order: net, ftd, active, spread
-  {key:'net',   label:'Net deposit',   desc:'Deposits minus withdrawals, USD',     unit:'usd',weight:0.15,color:'var(--c-net)',xc:'var(--x-net)'},
-  {key:'ftd',   label:'FTDs',          desc:'First-time deposits in the window',   unit:'n',  weight:0.25,color:'var(--c-ftd)',xc:'var(--x-ftd)'},
-  {key:'active',label:'Active clients',desc:'Clients who traded in the window',    unit:'n',  weight:0.35,color:'var(--c-active)',xc:'var(--x-active)'},
-  {key:'spread',label:'SpreadPay',     desc:'Spread-based payout, USD',            unit:'usd',weight:0.25,color:'var(--c-spread)',xc:'var(--x-spread)'}
+  {key:'net',   label:'Net deposit',   desc:'Deposits minus withdrawals, USD',     unit:'usd',weight:0.15,color:'var(--c-net)'},
+  {key:'ftd',   label:'FTDs',          desc:'First-time deposits in the window',   unit:'n',  weight:0.25,color:'var(--c-ftd)'},
+  {key:'active',label:'Active clients',desc:'Clients who traded in the window',    unit:'n',  weight:0.35,color:'var(--c-active)'},
+  {key:'spread',label:'SpreadPay',     desc:'Spread-based payout, USD',            unit:'usd',weight:0.25,color:'var(--c-spread)'}
 ];
 const KPIS=KPI0.map(k=>Object.assign({},k,{weight:(D.weights&&typeof D.weights[k.key]==='number')?D.weights[k.key]:k.weight}));
 const TOPN=D.topN||3;
@@ -373,16 +367,16 @@ function cell(r,k){
   const ratio=r.ratio[k.key], raw=r.a.raw&&r.a.raw[k.key];
   const prim=(RAW&&raw!=null)?(k.unit==='usd'?money(raw):whole(raw)):ratio.toFixed(1)+'%';
   const sec=(RAW&&raw!=null)?'<div class="sm">'+ratio.toFixed(1)+'% of leader</div>':'';
-  return '<td data-l="'+k.label+'" style="--kc:'+k.xc+'"><div class="cv"><div class="pv">'+prim+'</div>'+sec+'<div class="mini"><i style="width:'+ratio+'%"></i></div></div></td>';
+  return '<td data-l="'+k.label+'" style="--kc:'+k.color+'"><div class="cv"><div class="pv">'+prim+'</div>'+sec+'<div class="mini"><i style="width:'+ratio+'%"></i></div></div></td>';
 }
 function breakdown(r){
   return '<tr class="detail"><td colspan="7"><div class="bd">'+KPIS.map(k=>
-    '<div class="bk" style="--kc:'+k.xc+'"><div class="n">'+k.label+' · weight '+W(k)+'</div><div class="p">'+r.ratio[k.key].toFixed(1)+'%</div><div class="bar"><i style="width:'+r.ratio[k.key]+'%"></i></div>'+
+    '<div class="bk" style="--kc:'+k.color+'"><div class="n">'+k.label+' · weight '+W(k)+'</div><div class="p">'+r.ratio[k.key].toFixed(1)+'%</div><div class="bar"><i style="width:'+r.ratio[k.key]+'%"></i></div>'+
     '<div class="calc">'+r.ratio[k.key].toFixed(1)+'% × '+W(k)+' = <b>'+r.pts[k.key].toFixed(2)+' pts</b></div></div>').join('')+
     '<div class="bt"><div class="n">Total score</div><div class="p">'+r.score.toFixed(2)+'<small> / 100</small></div><div class="calc">'+KPIS.map(k=>r.pts[k.key].toFixed(2)).join(' + ')+' = '+r.score.toFixed(2)+'</div></div></div></td></tr>';
 }
 function renderTable(){
-  const head='<thead><tr><th>Rank</th><th>Affiliate</th>'+KPIS.map(k=>'<th style="--kc:'+k.xc+'"><i></i>'+k.label+' · '+(RAW?(k.unit==='usd'?'USD':'count'):W(k)+'%')+'</th>').join('')+'<th>Score / 100</th></tr></thead>';
+  const head='<thead><tr><th>Rank</th><th>Affiliate</th>'+KPIS.map(k=>'<th style="--kc:'+k.color+'"><i></i>'+k.label+' · '+(RAW?(k.unit==='usd'?'USD':'count'):W(k)+'%')+'</th>').join('')+'<th>Score / 100</th></tr></thead>';
   let body;
   if(!showTable()){
     body='<tbody><tr><td colspan="7" class="empty-td" style="padding:0"><div class="empty"><h4>Standings open soon</h4><p>The competition starts on '+dLong(START)+'. The first standings will be published on '+dDay(FIRST)+', and every day after that.</p></div></td></tr></tbody>';
