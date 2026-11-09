@@ -2,7 +2,7 @@
 window.LEADERBOARD = {
  "updateDate": "2026-11-03",
  "startDate": "2026-11-15T00:00:00+02:00",
- "endDate": "2026-12-31T23:59:59+02:00",
+ "endDate": "2026-12-15T23:59:59+02:00",
  "topN": 3,
  "demo": true,
  "showFigures": false,
