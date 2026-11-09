@@ -157,6 +157,18 @@ tr.detail td{background:#08130e;padding:18px 16px}
 .mx:hover{border-color:var(--accent)}
 .mbox .sub{margin:10px 0 0;color:var(--muted);font-size:15.5px;line-height:1.55}
 
+/* festive title + decorations */
+.kicker{font-size:clamp(15px,2.4vw,21px);letter-spacing:.16em;font-weight:800}
+.kicker .k1{color:#fff}.kicker .k2{color:var(--gold)}.kicker .k3{color:var(--accent)}.kicker .k4{color:var(--green)}.kicker .kd{color:var(--silver)}
+.deco{display:flex;align-items:flex-end;gap:20px;margin-top:18px;flex-wrap:wrap}
+.deco span{display:block;height:40px;animation:bob 3.2s ease-in-out infinite}
+.deco svg{height:100%;width:auto;display:block}
+.deco .d1{animation-delay:.3s}.deco .d2{animation-delay:.6s}.deco .d3{animation-delay:.9s}.deco .d4{animation-delay:1.2s}.deco .d5{animation-delay:1.5s}.deco .d6{animation-delay:1.8s}
+.deco .d2 svg{animation:twinkle 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.deco span,.deco .d2 svg{animation:none}}
+
 @media(max-width:960px){
   .kgrid{grid-template-columns:repeat(2,1fr)}
   .condbtn{padding:18px 20px;border-radius:18px}
@@ -188,11 +200,12 @@ tr.detail td{background:#08130e;padding:18px 16px}
 <div class="wrap">
   <div class="hero">
     <div>
-      <div class="kicker">Africa · SADC Christmas Competition</div>
-      <h1>Your clients.<br>Your performance.<br><em>Your rewards.</em></h1>
+      <div class="kicker"><span class="k1">Africa</span> <span class="kd">·</span> <span class="k2">SADC</span> <span class="k3">Christmas</span> <span class="k4">Competition</span></div>
+      <h1>Your clients.<br>Your performance.<br>Your rewards.</h1>
       <p class="xmas">This Christmas, we’re rewarding the affiliates who make a difference.</p>
       <p class="lead">Open to all Weltrade affiliates across the SADC region. Every eligible client counts towards the performance of the affiliate who referred them. Four key performance indicators combine into one transparent score out of 100, with performance tracked daily.</p>
       <div class="tagline">One competition. One leaderboard. A Christmas worth winning.</div>
+      <div class="deco" aria-hidden="true"><span class="d0"><svg viewBox="0 0 24 32" aria-hidden="true"><path d="M17 4a6 6 0 0 0-11 3.5V28" fill="none" stroke="#f3f5f4" stroke-width="5" stroke-linecap="round"/><path d="M17 4a6 6 0 0 0-11 3.5V28" fill="none" stroke="#e0303f" stroke-width="5" stroke-linecap="round" stroke-dasharray="4 5"/></svg></span><span class="d1"><svg viewBox="0 0 24 28" aria-hidden="true"><rect x="9" y="1" width="6" height="4" rx="1" fill="#f0c75e"/><circle cx="12" cy="17" r="9" fill="#e0303f"/><path d="M4 15q8 5 16 0" fill="none" stroke="#f0c75e" stroke-width="2"/><circle cx="9" cy="13" r="2" fill="#fff" opacity=".45"/></svg></span><span class="d2"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,1 15,9 23,9 16.5,14 19,22.5 12,17.5 5,22.5 7.5,14 1,9 9,9" fill="#f0c75e"/></svg></span><span class="d3"><svg viewBox="0 0 24 30" aria-hidden="true"><polygon points="12,2 20,12 15,12 22,21 14,21 14,27 10,27 10,21 2,21 9,12 4,12" fill="#2fb36d"/><circle cx="12" cy="9" r="1.4" fill="#f0c75e"/><circle cx="8" cy="18" r="1.4" fill="#e0303f"/><circle cx="16" cy="18" r="1.4" fill="#fff"/></svg></span><span class="d4"><svg viewBox="0 0 26 26" aria-hidden="true"><rect x="3" y="10" width="20" height="14" rx="2" fill="#e0303f"/><rect x="2" y="7" width="22" height="5" rx="1.5" fill="#c9d1cd"/><rect x="11.5" y="7" width="3" height="17" fill="#f0c75e"/><path d="M13 7C9 1 5 3 7 6c1 1 4 1 6 1zM13 7c4-6 8-4 6-1-1 1-4 1-6 1z" fill="none" stroke="#f0c75e" stroke-width="2"/></svg></span><span class="d5"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="#dfe6e2" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17L20.7 7M9 3.5l3 2.5 3-2.5M9 20.5l3-2.5 3 2.5"/></svg></span><span class="d6"><svg viewBox="0 0 24 32" aria-hidden="true"><path d="M17 4a6 6 0 0 0-11 3.5V28" fill="none" stroke="#f3f5f4" stroke-width="5" stroke-linecap="round"/><path d="M17 4a6 6 0 0 0-11 3.5V28" fill="none" stroke="#e0303f" stroke-width="5" stroke-linecap="round" stroke-dasharray="4 5"/></svg></span></div>
       <div class="flags" id="flags"></div>
       <div class="crumbs"><b>Affiliate</b><span class="ar">←</span><b>Clients</b><span>/ Client performance rolls up to the affiliate</span></div>
     </div>
